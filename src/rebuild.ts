@@ -123,9 +123,10 @@ function buildNode(
             node.appendChild(child);
             continue;
           }
-          if (tagName === 'iframe' && name === 'src') {
-            continue;
-          }
+          // 允许加载iframe内容
+          // if (tagName === 'iframe' && name === 'src') {
+          //   continue;
+          // }
           try {
             if (n.isSVG && name === 'xlink:href') {
               node.setAttributeNS('http://www.w3.org/1999/xlink', name, value);
@@ -137,7 +138,7 @@ function buildNode(
               // Rename some of the more common atttributes from https://www.w3schools.com/tags/ref_eventattributes.asp
               // as setting them triggers a console.error (which shows up despite the try/catch)
               // Assumption: these attributes are not used to css
-              node.setAttribute('_' + name, value);
+              node. setAttribute('_' + name, value);
             } else {
               node.setAttribute(name, value);
             }
