@@ -138,7 +138,7 @@ function buildNode(
               // Rename some of the more common atttributes from https://www.w3schools.com/tags/ref_eventattributes.asp
               // as setting them triggers a console.error (which shows up despite the try/catch)
               // Assumption: these attributes are not used to css
-              node. setAttribute('_' + name, value);
+              node.setAttribute('_' + name, value);
             } else {
               node.setAttribute(name, value);
             }
